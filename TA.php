@@ -1,95 +1,57 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<title>
-		TA Interface
-	</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 </head>
-
 <body>
-
-	<div class="header">
-	    <div class="logo">
-	        <i class="fa fa-tachometer"></i>
-	        <!--<span>Br</span>-->
-	    </div>
-	    <a href="#" class="nav-trigger"><span></span></a>
+	<div class = "box">
+    	<div class = "heading">Dashboard</div>
+    	<hr>
+		<div class = "first">
+			<a href="List_of_students_to_each_TA.php">View List of Students</a>
+		</div>
+		<hr>
+		<!--<div class = "second">
+			<a href="#">Distribute Applications</a>
+		</div>
+		<hr>
+		<div class = "third">
+			<a href="changeview.php">View a Member</a>
+		</div>
+		<hr>
+		<div class = "fourth">
+			<a href="#">Queries from Manager</a>
+		</div>
+	</div>-->
+	<div class = "main-space2">
+		<iframe type="application/pdf" src="sql.pdf" width="100%" height="100%" align="right"></iframe>
 	</div>
-	<div class="side-nav">
-	    <div class="logo">
-	        <i class="fa fa-tachometer"></i>
-	        <span>Dashboard</span>
-	    </div>
-	    <nav>
-	        <ul>
-	            <li>
-	                <a href="https://www.youtube.com/">
-	                    <span><i class="fa fa-user"></i></span>
-	                    <span>Add TA/Manager</span>
-	                </a>
-	            </li>
-	            <li>
-	                <a href="#">
-	                    <span><i class="fa fa-envelope"></i></span>
-	                    <span>Distribute </span>
-	                </a>
-	            </li>
-	            <li class="active">
-	                <a href="#">
-	                    <span><i class="fa fa-bar-chart"></i></span>
-	                    <span>Analytics</span>
-	                </a>
-	            </li>
-	            <li>
-	                <a href="#">
-	                    <span><i class="fa fa-credit-card-alt"></i></span>
-	                    <span>Payments</span>
-	                </a>
-	            </li>
-	        </ul>
-	    </nav>
-	</div>
-
-
-	<div stype="padding:20px">
-
-        
-
-		<iframe type="application/pdf" src="sql.pdf" width="42%" height="575px" align="right"></iframe>
-
-		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmn--p-ZKw4LNWI1MCr-ivFkIfaFpMpEjxoAonTKT3S0ITue38FqNY7AfSFKxeQeJphjRmnWYZROPG/pubhtml?gid=856111278&amp;single=true&amp;widget=true&amp;headers=false" width="42%" height="575px" align="right"></iframe>
-
-
-        
+	<div class = "main-space">
+		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmn--p-ZKw4LNWI1MCr-ivFkIfaFpMpEjxoAonTKT3S0ITue38FqNY7AfSFKxeQeJphjRmnWYZROPG/pubhtml?gid=856111278&amp;single=true&amp;widget=true&amp;headers=false" width = "100%" height = "100%" align = "right"></iframe>
+	
+	
 		<form  class="comment-section" action = "TA.php" method = "post">
 
-            <input type="text" class="com" name="regis_num" placeholder="Registration Number"><br><br>
-            
-            <input type="text" class="com" name="comment" placeholder="Comment here"><br><br>
+			<input type="text" class="com" name="regis_num" placeholder="Registration Number"><br><br>
 
-            <input type="checkbox" name="correctness" > Given information is correct <br><br>
-            
+			<input type="text" class="com" name="comment" placeholder="Comment here"><br><br>
 
-            <button name="submit_info" class="btn btn-lg btn-primary btn-block" type="submit_Info">Submit</button>
+			<input type="checkbox" name="correctness"> Given information is correct <br><br>
 
 
+			<button name="submit_info" class="btn btn-lg btn-primary btn-block" type="submit_Info">Submit</button>
 
 
 
-        </form>
-		
-		
-		
+
+
+		</form>
+	
 	</div>
 
-	
 </body>
-
 </html>
-
 
 
 
