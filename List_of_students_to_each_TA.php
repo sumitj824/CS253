@@ -34,9 +34,18 @@
             // output data of each row
             while($row = $result->fetch_assoc()) {
             //echo '<li>'.$row['Username']; '</li>';
-            echo '<li><a href="'. $row['link1'] .'">'. $row['usern']; '</a></li>';///////ye code abhi kaam nahi karega, pehle link column banana padega
+            //echo '<li><a href="'. $row['link1'] .'">'. $row['usern']; '</a></li>';///////ye code abhi kaam nahi karega, pehle link column banana padega
+
+            echo '<li><a href="page.php?id=' . $row['usern'] . '">'. $row['usern']; "</a></li>";///////ye code abhi kaam nahi karega, pehle link column banana padega
+
+            //echo "<h1><a href='page.php?id=$row['usern']'><button name='button1' id = 'buttons'> '. $row['usern']; '</button></a></h1>"; //this is correct;
             //echo "<tr><td>" . $row["role"]. "</td><td>" . $row["username"] . "</td><td>"
             //. $row["password"]. "</td></tr>";
+
+
+            //echo "<h1><a href='page.php?id=$productid'><button name='button1' id = 'buttons'>IN</button></a></h1>"; //this is correct;
+
+
             }
             echo "</table>";
             } else { echo "0 results"; }

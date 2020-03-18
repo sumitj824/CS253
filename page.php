@@ -1,3 +1,11 @@
+<?php 
+   if(isset($_GET['id'])){
+   	$user = $_GET['id'];
+      echo $user;
+   }   
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,13 +32,33 @@
 			<a href="#">Queries from Manager</a>
 		</div>
 	</div>-->
-	<!--<div class = "main-space2">
-		<iframe type="application/pdf" src="" width="100%" height="100%" align="right"></iframe>
+	<div class = "main-space2">
+		<iframe type="application/pdf" src="<?php echo $user . '.pdf'; ?>" width="100%" height="100%" align="right"></iframe>
 	</div>
 	<div class = "main-space">
-		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmn--p-ZKw4LNWI1MCr-ivFkIfaFpMpEjxoAonTKT3S0ITue38FqNY7AfSFKxeQeJphjRmnWYZROPG/pubhtml?gid=856111278&amp;single=true&amp;widget=true&amp;headers=false" width = "100%" height = "100%" align = "right"></iframe>
-			
-			<?php echo $fi;  ?>
+      <!--<table>
+
+         
+         /*$conn = mysqli_connect("localhost", "root", "");
+         mysqli_select_db($conn,"cs253");
+         // Check connection
+         if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+         }
+         $sql = "SELECT * FROM regta";
+         $result = $conn->query($sql);
+         if ($result->num_rows > 0) {
+         // output data of each row
+         while($row = $result->fetch_assoc()) {
+            
+         }
+         echo "</table>";
+         } else { echo "0 results"; }
+         $conn->close();*/
+
+
+         
+      </table>-->
 		<form  class="comment-section" action = "TA.php" method = "post">
 
 			<input type="text" class="com" name="regis_num" placeholder="Registration Number"><br><br>
@@ -48,11 +76,10 @@
 
 		</form>
 	
-	</div>-->
+	</div>
 
 </body>
 </html>
-
 
 
 
