@@ -1,3 +1,10 @@
+<?php
+    
+    session_start();
+
+?>
+
+
 <?php 
    if(isset($_GET['id'])){
    	$user = $_GET['id'];
@@ -14,6 +21,7 @@
 </head>
 <body>
 	<div class = "box">
+    <div class = "heading"><?php echo $_SESSION['usern']; ?></div>
     	<div class = "heading">Dashboard</div>
     	<hr>
 		<div class = "first">
@@ -88,7 +96,7 @@
 
 $servername = "localhost";
 $conn = mysqli_connect($servername,"root","");
-mysqli_select_db($conn,"testlog2");   // put the correct value
+mysqli_select_db($conn,"cs253");   // put the correct value
 if(isset($_POST['submit_info'])){
     $data_incorrect = $_POST["correctness"];
     $regis_num = $_POST["regis_num"];

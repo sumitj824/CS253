@@ -1,3 +1,10 @@
+<?php
+
+	session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +13,7 @@
 </head>
 <body>
 	<div class = "box">
+		<div class = "heading"><?php echo 'Welcome, ' . $_SESSION['usern']; ?></div>
     	<div class = "heading">Dashboard</div>
     	<hr>
 		<div class = "first">
@@ -26,27 +34,9 @@
 	</div>-->
 	<!--<div class = "main-space2">
 		<iframe type="application/pdf" src="" width="100%" height="100%" align="right"></iframe>
-	</div>
-	<div class = "main-space">
-		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmn--p-ZKw4LNWI1MCr-ivFkIfaFpMpEjxoAonTKT3S0ITue38FqNY7AfSFKxeQeJphjRmnWYZROPG/pubhtml?gid=856111278&amp;single=true&amp;widget=true&amp;headers=false" width = "100%" height = "100%" align = "right"></iframe>
-			
-			<?php echo $fi;  ?>
-		<form  class="comment-section" action = "TA.php" method = "post">
-
-			<input type="text" class="com" name="regis_num" placeholder="Registration Number"><br><br>
-
-			<input type="text" class="com" name="comment" placeholder="Comment here"><br><br>
-
-			<input type="checkbox" name="correctness"> Given information is correct <br><br>
-
-
-			<button name="submit_info" class="btn btn-lg btn-primary btn-block" type="submit_Info">Submit</button>
-
-
-
-
-
-		</form>
+	</div>-->
+	<!--<div class = "main-space">
+		
 	
 	</div>-->
 
@@ -57,29 +47,3 @@
 
 
 
-<?php 
-
-$servername = "localhost";
-$conn = mysqli_connect($servername,"root","");
-mysqli_select_db($conn,"testlog2");   // put the correct value
-if(isset($_POST['submit_info'])){
-    $data_incorrect = $_POST["correctness"];
-    $regis_num = $_POST["regis_num"];
-    if(empty($data_incorrect)){
-        //echo "Checkbox left unchecked";
-        $comment = $_POST['comment'];
-        $query = "INSERT INTO comm_table (reg_num,status,comment) VALUES('$regis_num','Incorrect Data','$comment')";
-        $result2 = mysqli_query($conn,$query);
-        if($result2){
-            header('location: TA.html');
-        }
-    }
-    else { 
-        $query = "INSERT INTO comm_table (reg_num,status,comment) VALUES('$regis_num','Correct Data','')";
-        $result2 = mysqli_query($conn,$query);
-        if($result2){
-            header('location: TA.html');
-        }
-    }
-}
-?>

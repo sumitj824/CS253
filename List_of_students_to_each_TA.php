@@ -1,3 +1,11 @@
+<?php
+
+    session_start();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,6 +19,7 @@
     <body>
 
         <div class = "box">
+        <div class = "heading"><?php echo $_SESSION['usern']; ?></div>
     	<div class = "heading">Dashboard</div>
     	<hr>
 		<div class = "first">
@@ -28,7 +37,7 @@
             if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "SELECT usern, link1 FROM regta";
+            $sql = "SELECT usern FROM regta";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
             // output data of each row

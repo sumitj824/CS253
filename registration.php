@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $conn = mysqli_connect($servername,"root","");
-mysqli_select_db($conn,"logins");
+mysqli_select_db($conn,"cs253");
 if(isset($_POST['reg_user'])){
     $role = mysqli_real_escape_string($conn,$_POST['role']);
     $user = mysqli_real_escape_string($conn,$_POST['username']);
@@ -25,6 +25,8 @@ if(isset($_POST['reg_user'])){
     }
     $password = md5($pass);
     $query = "INSERT INTO logininfo (role,username,password) VALUES('$role','$user','$password')";
+    //$query = "INSERT INTO logininfo (usern,pass) VALUES('$user','$password')";
+
     $result2 = mysqli_query($conn,$query);
     if($result2){
      header('location: registration.php');

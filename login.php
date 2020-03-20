@@ -1,6 +1,14 @@
+<?php
+
+  session_start();
+
+?>
+
+
+
 <?php 
     $conn = mysqli_connect("localhost","root","");
-    mysqli_select_db($conn,"logins");
+    mysqli_select_db($conn,"cs253");
     if($_SERVER["REQUEST_METHOD"] == "POST"){
        $username = $_POST['username'];
        $password = $_POST['password'];
@@ -19,7 +27,8 @@
           header('location:registration.php');
         }
         else if($user['role'] === "TA"){
-          header('location:adminpro.html');
+          header('location:TA.php');
+          $_SESSION['usern']=$username;
         }
        }
        else{
@@ -27,7 +36,7 @@
                 <a href="login.php" class="close" data-dismiss="alert" aria-label="close">Close X</a>
                 <p><strong>Alerta!</strong></p>
                 Username or password wrong! Please try again!.
-            </div>';
+                </div>';
        }
     }
     $conn -> close();
