@@ -217,13 +217,13 @@
 				 $b = "button1";
 				 $id = $row['id'];
 				 $roles1 = "Manager";
-				 echo "<li><a href = 'page.php?id=$id&role=$roles1'><button id = '".$b."'class = '".$a."' name = 'roleSelected'>".$row['username']."</button></a>";
+				 echo "<li><a href = 'page1.php?id=$id&role=$roles1'><button id = '".$b."'class = '".$a."' name = 'roleSelected'>".$row['username']."</button></a>";
 				 $result2 = mysqli_query($conn,$query2);
 				 echo "<ul>";
 				 while($rows = mysqli_fetch_array($result2)){
 				 	$roles2 = "TA";
 				 	$id2 = $rows['id'];
-				 	echo "<li><a href = 'page.php?id=$id2&role=$roles2'><button id = '".$b."' class = '".$a."' name = 'roleSelected'>".$rows['username']."</button></a></li>";
+				 	echo "<li><a href = 'page1.php?id=$id2&role=$roles2'><button id = '".$b."' class = '".$a."' name = 'roleSelected'>".$rows['username']."</button></a></li>";
 				 }
 				 echo "</ul>";
 				 echo "</li>";
