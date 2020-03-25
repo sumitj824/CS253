@@ -24,7 +24,12 @@
        if($count == 1){
         $user = mysqli_fetch_assoc($result);
         if($user['role'] === "Manager"){
-          header('location:registration.php');
+          header('location:Manager.php');
+          $query1 = "select * from managers where username='".$username."'";
+          $result1 = mysqli_query($conn,$query1);
+          $userManager = mysqli_fetch_assoc($result1);
+          $_SESSION['IDMan']=$userManager['id'];
+          $_SESSION['userMan']=$username;
         }
         else if($user['role'] === "TA"){
           header('location:TA.php');
