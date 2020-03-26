@@ -8,7 +8,7 @@ if(isset($_POST['reg_user'])){
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	}
-	$sql = "SELECT * FROM m_tech_25 WHERE SNo = 1";// use session variable
+	$sql = "SELECT * FROM m_tech_25 WHERE `S.No.' = 1";// use session variable
 	$result = $conn->query($sql);
 	$fields  = $result->fetch_fields();
 	$row = $result->fetch_row(); 
@@ -18,7 +18,7 @@ if(isset($_POST['reg_user'])){
 		if($row[$i])$user = mysqli_real_escape_string($conn,$_POST['username'.$i.'']);
 		if($user){
 			//echo "!";
-			$query = "UPDATE m_tech_25 SET ".$field_info->name." = '$user' WHERE SNo = 1"; 
+			$query = "UPDATE m_tech_25 SET `".$field_info->name."` = '$user' WHERE `S.No.` = 1"; 
 //$query = "INSERT INTO logininfo (usern,pass) VALUES('$user','$password')
 			$result2 = mysqli_query($conn,$query);
 		}
@@ -64,7 +64,7 @@ if(isset($_POST['reg_user'])){
             if ($conn->connect_error) {
             	die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "SELECT * FROM m_tech_25 WHERE SNo = 1";// use session variable
+            $sql = "SELECT * FROM m_tech_25 WHERE `S.No.` = 1";// use session variable
             $result = $conn->query($sql);
             //if ($result->num_rows > 0) {
 			$fields  = $result->fetch_fields();
